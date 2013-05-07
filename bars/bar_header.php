@@ -45,7 +45,34 @@
 					<ul class="nav">
 					<li><a href="#">Home</a></li>
 					</ul>
+
+                    <?php
+                        if (isset($_SESSION["login"])) {
+                    ?>
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Hello, <?php echo $_SESSION["login"]; ?>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="logout.php">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <?php
+                        } else {
+                    ?>
+                            <ul class="nav pull-right">
+                                <li><a href="login.php">Login</a></li>
+                            </ul>
+                    <?php
+                        }
+                    ?>
 				</div>
+
+
 			</div>
 		</div>
 	</div>
